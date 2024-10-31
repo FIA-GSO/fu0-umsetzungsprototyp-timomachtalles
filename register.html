@@ -1,0 +1,61 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrieren - Ausbildungsnachweise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="dashboard.html">Ausbildungsnachweise</a>
+    </div>
+    <div class="nav-links">
+        <a href="index.html">Login</a>
+    </div>
+</div>
+
+<!-- Container -->
+<div class="container">
+    <div class="form-container">
+        <h2>Registrieren</h2>
+        <form action="/register" method="POST">
+            <div class="input-group">
+                <label for="fullname">Vollständiger Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Ihr vollständiger Name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+            </div>
+            <div class="input-group">
+                <label for="year">Ausbildungsstart</label>
+                <input type="date" id="year" name="year" placeholder="z.B. 1" required min="1">
+            </div>
+            <div class="input-group">
+                <label for="department">Abteilung</label>
+                <input type="text" id="department" name="department" placeholder="Ihre Abteilung" required>
+            </div>
+<!--            <div class="input-group">-->
+<!--                <label for="week">Ausbildungswoche</label>-->
+<!--                <input type="number" id="week" name="week" placeholder="z.B. 1" required min="1">-->
+<!--            </div>-->
+            <button type="submit" class="button">Registrieren</button>
+        </form>
+        <div class="footer">
+            Bereits registriert? <a href="index.html">Einloggen</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+</div>
+
+</body>
+</html>

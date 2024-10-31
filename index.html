@@ -1,0 +1,52 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="de">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Ausbildungsnachweise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="dashboard.html">Ausbildungsnachweise</a>
+    </div>
+    <div class="nav-links">
+        <a href="register.html">
+            <i class="mdi mdi-account-plus"></i>
+            Registrieren</a>
+    </div>
+</div>
+
+<!-- Container -->
+<div class="container">
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <div class="input-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="Ihre E-Mail" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Passwort</label>
+                <input type="password" id="password" name="password" placeholder="Ihr Passwort" required>
+            </div>
+            <button type="submit" class="button">Einloggen</button>
+        </form>
+        <div class="footer">
+            Noch keinen Account? <a href="register.html">Registrieren</a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+</div>
+
+</body>
+</html>

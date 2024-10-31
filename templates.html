@@ -1,0 +1,63 @@
+<!-- templates.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tätigkeitsvorlagen - Ausbildungsnachweise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="dashboard.html">Ausbildungsnachweise</a>
+    </div>
+    <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add_log.html">Neuen Nachweis</a>
+        <a href="settings.html">Einstellungen</a>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="table-container">
+    <h2>Tätigkeitsvorlagen</h2>
+    <form action="/add_template" method="POST">
+        <div class="input-group">
+            <label for="template_name">Vorlagenname</label>
+            <input type="text" id="template_name" name="template_name" placeholder="z.B. Urlaub" required>
+        </div>
+        <button type="submit" class="button">Vorlage hinzufügen</button>
+    </form>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Vorlagenname</th>
+            <th>Aktionen</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Beispielhafte Vorlagen -->
+        <tr>
+            <td>Urlaub</td>
+            <td class="actions">
+                <a href="edit_template.html">Bearbeiten</a> |
+                <a href="#" class="delete">Löschen</a>
+            </td>
+        </tr>
+        <!-- Weitere Vorlagen hier -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+</div>
+
+</body>
+</html>

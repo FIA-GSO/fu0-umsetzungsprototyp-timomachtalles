@@ -1,0 +1,121 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ausbildungsnachweise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="dashboard.html">Ausbildungsnachweise</a>
+    </div>
+    <div class="nav-links">
+        <a href="add_log.html">
+            <i class="mdi mdi-note-text"></i>
+            Neuen Nachweis</a>
+        <a href="templates.html">
+            <i class="mdi mdi-file-cog"></i>
+            Tätigkeitsvorlagen</a>
+        <a href="settings.html">
+            <i class="mdi mdi-cog"></i>
+            Einstellungen</a>
+        <a href="index.html">
+            <i class="mdi mdi-logout"></i>
+            Logout</a>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="table-container">
+    <h2>Meine Ausbildungsnachweise</h2>
+    <table>
+        <thead>
+        <tr>
+            <th class="table-header">Woche</th>
+            <th class="table-header">Datum</th>
+            <th class="table-header">Beschreibung</th>
+            <th class="table-header">Gesamtstunden</th>
+            <th class="table-header">Aktionen</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Beispielhafte Einträge -->
+        <tr>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">01.01.2024 - 07.01.2024</td>
+            <td>Einführung in die Firma und erste Aufgaben.</td>
+            <td style="text-align: center">40.00 Stunden</td>
+            <td class="actions">
+                <a href="edit_log.html">
+                    <i class="mdi mdi-square-edit-outline"></i>
+                    Bearbeiten</a>
+                |
+                <a href="#" class="delete">
+                    <i class="mdi mdi-delete"></i>
+                    Löschen</a>
+            </td>
+        </tr>
+        <!-- Weitere Einträge hier -->
+        <tr>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">01.01.2024 - 07.01.2024</td>
+            <td>Einführung in die Firma und erste Aufgaben.</td>
+            <td style="text-align: center">40.00 Stunden</td>
+            <td class="actions">
+                <a href="edit_log.html">
+                    <i class="mdi mdi-square-edit-outline"></i>
+                    Bearbeiten</a>
+                |
+                <a href="#" class="delete">
+                    <i class="mdi mdi-delete"></i>
+                    Löschen</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">01.01.2024 - 07.01.2024</td>
+            <td>Einführung in die Firma und erste Aufgaben.</td>
+            <td style="text-align: center">40.00 Stunden</td>
+            <td class="actions">
+                <a href="edit_log.html">
+                    <i class="mdi mdi-square-edit-outline"></i>
+                    Bearbeiten</a>
+                |
+                <a href="#" class="delete">
+                    <i class="mdi mdi-delete"></i>
+                    Löschen</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center">1</td>
+            <td style="text-align: center">01.01.2024 - 07.01.2024</td>
+            <td>Einführung in die Firma und erste Aufgaben.</td>
+            <td style="text-align: center">40.00 Stunden</td>
+            <td class="actions">
+                <a href="edit_log.html">
+                    <i class="mdi mdi-square-edit-outline"></i>
+                    Bearbeiten</a>
+                |
+                <a href="#" class="delete">
+                    <i class="mdi mdi-delete"></i>
+                    Löschen</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!-- edit_log.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ausbildungsnachweis bearbeiten - Ausbildungsnachweise</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="dashboard.html">Ausbildungsnachweise</a>
+    </div>
+    <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="templates.html">Tätigkeitsvorlagen</a>
+        <a href="settings.html">Einstellungen</a>
+        <a href="index.html">Logout</a>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+    <div class="form-container">
+        <h2>Ausbildungsnachweis bearbeiten</h2>
+        <form action="/edit_log" method="POST">
+            <input type="hidden" name="log_id" value="<!-- Log-ID hier einfügen -->">
+            <div class="input-group">
+                <label for="week">Woche</label>
+                <input type="number" id="week" name="week" placeholder="Wochennummer" required min="1" value="<!-- Vorherige Woche -->">
+            </div>
+            <div class="input-group">
+                <label for="date">Datum</label>
+                <input type="text" id="date" name="date" placeholder="z.B. 01.01.2024 - 07.01.2024" required value="<!-- Vorheriges Datum -->">
+            </div>
+            <div class="input-group">
+                <label for="fullname">Vollständiger Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Ihr vollständiger Name" required value="<!-- Vorheriger Name -->">
+            </div>
+            <div class="input-group">
+                <label for="training_year">Ausbildungsjahr</label>
+                <input type="number" id="training_year" name="training_year" placeholder="z.B. 1" required min="1" value="<!-- Vorheriges Ausbildungsjahr -->">
+            </div>
+            <div class="input-group">
+                <label for="department">Abteilung</label>
+                <select id="department" name="department">
+                    <option value="Standardabteilung" <!-- selected --> >Standardabteilung</option>
+                    <option value="Abteilung A" <!-- selected --> >Abteilung A</option>
+                    <option value="Abteilung B" <!-- selected --> >Abteilung B</option>
+                    <!-- Weitere Abteilungen -->
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="activities">Tätigkeiten</label>
+                <div id="activities">
+                    <!-- Dynamische Tätigkeiten mit vorherigen Daten -->
+                    <div class="activity">
+                        <textarea type="text" name="activity[]" placeholder="Tätigkeit" required value="<!-- Tätigkeit 1 -->"></textarea>
+                        <input type="number" name="duration[]" class="duration" placeholder="Dauer (Stunden)" required min="0" value="<!-- Dauer 1 -->">
+                        <button type="button" class="button" onclick="removeActivity(this)">Entfernen</button>
+                    </div>
+                    <!-- Weitere Tätigkeiten -->
+                </div>
+                <button type="button" class="button" onclick="addActivity()">Weitere Tätigkeit hinzufügen</button>
+            </div>
+            <div class="input-group">
+                <label>Totalstunden: <span id="totalHours"><!-- Gesamtstunden --> Stunden</span></label>
+            </div>
+            <button type="submit" class="button">Speichern</button>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+</div>
+
+<script>
+    function addActivity() {
+        const activitiesDiv = document.getElementById('activities');
+        if (activitiesDiv.children.length >= 10) {
+            alert('Sie können maximal 10 Tätigkeiten pro Tag eintragen.');
+            return;
+        }
+        const activityDiv = document.createElement('div');
+        activityDiv.classList.add('activity');
+        activityDiv.innerHTML = `
+                <textarea type="text" name="activity[]" placeholder="Tätigkeit" required></textarea>
+                <input type="number" name="duration[]" class="duration" placeholder="Dauer (Stunden)" required min="0">
+                <button type="button" class="button" onclick="removeActivity(this)">Entfernen</button>
+            `;
+        activitiesDiv.appendChild(activityDiv);
+    }
+
+    function removeActivity(button) {
+        const activityDiv = button.parentElement;
+        activityDiv.remove();
+        calculateTotal();
+    }
+
+    // Aktualisieren der Gesamtstunden bei Änderungen
+    document.addEventListener('input', () => {
+        const durationInputs = document.querySelectorAll('.duration');
+        let total = 0;
+        durationInputs.forEach(input => {
+            const value = parseFloat(input.value) || 0;
+            total += value;
+        });
+        document.getElementById('totalHours').textContent = total.toFixed(2) + ' Stunden';
+    });
+</script>
+
+</body>
+</html>
