@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Profildaten</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="scripts.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+          <a href="dashboard.html">Profildaten aktualisieren</a>
+      </div>
+      <div class="nav-links">
+          <a href="index.html">
+              <i class="mdi mdi-login"></i>
+              Login</a>
+      </div>
+    </div>
+    
+    <!-- Container -->
+    <div class="container">
+      <div class="form-container">
+          <form>
+              <div class="input-group">
+                  <label for="fullname">Vorname</label>
+                  <input type="text" id="fullname" name="fullname" placeholder="Ihr Vorname" required>
+              </div>
+              <div class="input-group">
+                  <label for="email">Nachname</label>
+                  <input type="email" id="email" name="email" placeholder="Ihr Nachname" required>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <div class="input-group">
+                    <label for="year">Abteilung</label>
+                    <input type="text" id="year" name="year" placeholder="z.B. IT" required min="1">
+                </div>
+                <div class="input-group">
+                    <label for="department">Lehrjahr</label>
+                    <input type="number" id="department" name="department" placeholder="Ihr Lehrjar" required>
+                </div>
+              </div>
+              <div style="display: flex; gap: 10px;">
+                <button type="submit" class="button">
+                  <i class="mdi mdi-reload"></i>
+                  Zurücksetzen
+                </button>
+                <button type="submit" class="button">
+                  Bestätigen
+                  <i class="mdi mdi-check"></i>
+                </button>
+              </div>
+          </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      &copy; 2024 Ihr Unternehmen. Alle Rechte vorbehalten.
+    </div>
+
+  </body>
+</html>
